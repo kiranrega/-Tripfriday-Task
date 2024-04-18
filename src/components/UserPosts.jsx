@@ -130,7 +130,7 @@ const UserPosts = () => {
                 comments={comments[post.id] || []}
                 newComment={newComment}
                 handleCommentChange={handleCommentChange}
-                postComment={() => postComment(post.id, newComment)}
+                postComment={() => postComment(post.id, newComment, resetNewComment)}
                 deletePost={() => deletePost(post.id)}
                 showUpdateModal={() => handleShowUpdateModal(post.id)}
               />

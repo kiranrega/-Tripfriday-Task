@@ -103,7 +103,7 @@ const usePostsAndComments = (userId) => {
     }
   };
 
-  const postComment = async (postId, comment) => {
+  const postComment = async (postId, comment, resetNewComment) => {
     try {
       if (!comment.trim()) {
         console.error('Comment cannot be empty');
@@ -130,6 +130,7 @@ const usePostsAndComments = (userId) => {
         ...prevComments,
         [postId]: [...(prevComments[postId] || []), newCommentData],
       }));
+      resetNewComment()
     } catch (error) {
       console.error('Error posting comment:', error);
     }
