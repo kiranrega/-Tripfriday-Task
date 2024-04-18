@@ -37,7 +37,7 @@ const UserList = () => {
   }, []);
 
   return (
-    <div className="container mx-auto py-8">
+    <div className="container mx-auto">
       <h1 className="text-2xl font-bold mb-4 text-center">User List</h1>
       {showLoader ? (
         <div className="flex justify-center h-screen">
@@ -48,7 +48,7 @@ const UserList = () => {
           {usersList.map((user) => (
             <li
               key={user.id}
-              className="py-2 px-4 bg-gray-100 rounded-md hover:bg-gray-200 cursor-pointer flex items-center m-3 "
+              className=" font-bold py-2 px-4 bg-gray-100 rounded-md hover:bg-gray-200 cursor-pointer flex items-center m-3 "
               data-tooltip-id={user.id}
               onClick={() => handleUserClick(user.id)}
             >
@@ -56,10 +56,9 @@ const UserList = () => {
               <ReactTooltip
                 id={user.id}
                 place="top"
-                className="tooltip-container"
               >
-                <p className="text-2xl m-1">Name: {user.name}</p>
-                <p className="text-2xl m-1">E-Mail : {user.email}</p>
+                <p className="text-xl m-1">Name: {user.name}</p>
+                <p className="text-xl m-1">E-Mail : {user.email}</p>
               </ReactTooltip>
             </li>
           ))}
